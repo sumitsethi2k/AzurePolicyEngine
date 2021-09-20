@@ -1,6 +1,6 @@
 {
  "properties": {
-  "displayName": "NSG-TestPolicy-PolicyEngine",
+  "displayName": "NSG-TestPolicy-GitPolicyEngine",
   "policyType": "Custom",
   "mode": "All",
   "metadata": {
