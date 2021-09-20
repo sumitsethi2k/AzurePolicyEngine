@@ -1,6 +1,6 @@
 {
  "properties": {
-  "displayName": "NSG-TestPolicy-Neetima",
+  "displayName": "NSG-TestPolicy-PolicyEngine",
   "policyType": "Custom",
   "mode": "All",
   "metadata": {
