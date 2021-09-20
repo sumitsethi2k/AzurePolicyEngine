@@ -1,0 +1,32 @@
+name: manage-azure-policy-d3f7601a
+on:
+  workflow_dispatch:
+    inputs:
+      remarks:
+        description: 'Reason for triggering the workflow run'
+        required: false
+        default: 'Updating Azure Policies'
+
+
+## Uncomment the following if you wish to automatically trigger workflow run with every commit
+#
+#  push:
+#    paths:
+#      - 'policies/NSG-TestPolicy-Neetima_f9ab8884-ddcb-4b85-99b3-463a65a9dad7/**'
+#      - .github/workflows/manage-azure-policy-d3f7601a.yml
+jobs:
+  apply-azure-policy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Login to Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{secrets.AZURE_CREDENTIALS_d3f7601a}}
+        allow-no-subscriptions: true
+    - name: Create or Update Azure Policies
+      uses: azure/manage-azure-policy@v0
+      with:
+        paths: |
+          policies/NSG-TestPolicy-Neetima_f9ab8884-ddcb-4b85-99b3-463a65a9dad7/**
